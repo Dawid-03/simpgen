@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPCARD GENERATOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/53c611a6af.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/generator.css">
+</head>
+
+<body>
+
+
+    <button class="burger-btn">
+        <div class="burger-btn__box">
+            <div class="burger-btn__bars"></div>
+        </div>
+    </button>
+
+    <section class="nav nav--active">
+        <div class="nav__items">
+            <a href="./index.html" class="nav__item">Menu</a>
+            <a href="#" class="nav__item">Discord</a>
+            <a href="https://tipply.pl/u/simpcard" target="_blank" class="nav__item">Donate</a>
+        </div>
+    </section>
+
+    <section>
+        <a href="./index.html" class="nav-mobile-logo-a">SIMPCARD.PL</a>
+    </section>
+
+    <section class="nav-pc">
+        <div class="nav-pc-div">
+            <a href="./index.html" class="nav-pc-a"><i class="fab fa-airbnb"></i>Menu</a>
+            <a href="#" class="nav-pc-a"><i class="fab fa-discord"></i>Discord</a>
+            <a href="https://tipply.pl/u/simpcard" target="_blank" class="nav-pc-a"><i
+                    class="fas fa-coins"></i>Donate</a>
+        </div>
+        <a href="./index.html" class="nav-pc-logo-a">SIMPCARD.PL</a>
+    </section>
+
+
+
+    <section class="generator">
+
+        <form method="POST" action="/api/v1/generate/">
+
+            <div class="signature-box">
+                <label for="signature-card">Podpis posiadacza karty</label>
+                <input type="text" class="sign" name="sign" placeholder="np. Jan Kowalski">
+            </div>
+
+            <div class="birth-box">
+                <label for="birth-day">Data urodzenia</label>
+                <input type="text" class="bday" name="birthDate" placeholder="np. 10.09.2004">
+            </div>
+
+            <div class="name-box">
+                <label for="name-surname">Imię i nazwisko</label>
+                <input type="text" class="name" name="nameSurName" placeholder="np. Jan Kowalski">
+            </div>
+
+            <div class="city-box">
+                <label for="located-house">Miasto</label>
+                <input type="text" class="city" name="city" placeholder="np. Warszawa">
+            </div>
+
+            <div class="desirable-box">
+                <label for="desirable-object">Obiekt porządany</label>
+                <input type="text" class="object" name="desirable" placeholder="np. Anna Kowalska">
+            </div>
+
+            <!-- <div class="add-file-box">
+                <label class="btn-label" for="actual-btn">Dodaj zdjęcie do Simp Carda</label>
+                <input type="file" id="actual-btn" name="file" accept="image/*">
+            </div> -->
+
+            <input type="file" id="fileinput" name ="image" multiple="multiple" accept="image/*" />
+
+            <div class="submit-box">
+                <input type="submit" class="generate" value="Generuj">
+            </div>
+    </form>
+
+    </section>
+
+
+    <section class="footer">
+        <div class="footer-container">
+            <span>&copy; 2021 | SIMPCARD.PL</span>
+        </div>
+    </section>
+
+
+    <script>
+        const nav = document.querySelector('.nav');
+        const navBtn = document.querySelector('.burger-btn');
+
+        const handleNav = () => {
+            nav.classList.toggle('nav--active');
+
+            allNavItems.forEach((item) => {
+                item.addEventListener('click', () => {
+                    nav.classList.remove('nav--active');
+                });
+            });
+        };
+
+        navBtn.addEventListener('click', handleNav);
+
+        // add file -----------------------------------------
+
+        const actualBtn = document.getElementsById('actual-btn');
+
+        const fileChosen = document.getElementsByClassName('.file-not-add');
+
+        actualBtn.addEventListener('change', function () {
+            fileChosen.textContent = this.files[0].name;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+@mixin burgerBtn {
+	position: absolute;
+	right: 0;
+	height: 3px;
+	content: '';
+	background-color: $white;
+	;
+	transition: width 0.4s;
+}
+
+@mixin navItemsAnimation {
+	@keyframes navItemsAnimation {
+		from {
+			transform: translateX(200%);
+		}
+
+		to {
+			transform: translateX(0);
+		}
+	}
+
+	.nav-items-animation {
+		animation: navItemsAnimation;
+	}
+}
+
+@mixin generatorIcon {
+	.fa-airbnb {
+		position: absolute;
+		font-size: 1.8rem;
+		margin-left: -22px;
+		top: 2px;
+	}
+}
+
+@mixin discordIcon {
+	.fa-discord {
+		position: absolute;
+		font-size: 1.5rem;
+		margin-left: -25px;
+		top: 3px;
+	}
+}
+
+@mixin donateIcon {
+	.fa-coins {
+		position: absolute;
+		font-size: 1.6rem;
+		margin-left: -25px;
+		top: 2px;
+	}
+}
+
+@mixin donateHand {
+	.fa-hand-holding-usd {
+		position: absolute;
+		font-size: 2rem;
+		margin-left: 7px;
+	}
+}
+
+@mixin min992px {
+	@media (min-width: 992px) {
+		.nav-mobile-logo-a,
+		.burger-btn {
+			display: none;
+		}
+
+		.nav-mobile-logo-a {
+			top: 0.6em;
+			left: 1em;
+			font-size: 3rem;
+		}
+
+		.burger-btn {
+			top: 3.5em;
+			right: 3.5em;
+		}
+	}
+}
+
+@mixin max992px {
+	@media (max-width: 992px) {
+		.nav-pc {
+			display: none;
+		}
+	}
+}
+
+@mixin min768px {
+	@media (min-width: 768px) {
+		.nav-mobile-logo-a {
+			top: 0.6em;
+			left: 1em;
+			font-size: 3rem;
+		}
+
+		.burger-btn {
+			top: 3.5em;
+			right: 3.5em;
+		}
+
+		.nav {
+			&__item {
+				font-size: 3rem;
+			}
+		}
+
+		.footer {
+			top: 100%;
+		}
+
+		.signature-box {
+			padding-top: 30px;
+			line-height: 30px;
+		}
+
+		.sign {
+			width: 30em;
+			padding-top: 10px;
+			line-height: 30px;
+		}
+
+		.bday {
+			width: 30em;
+			padding-top: 10px;
+			line-height: 30px;
+		}
+
+		.birth-box {
+			padding-top: 30px;
+			line-height: 30px;
+		}
+
+		.name {
+			width: 30em;
+			padding-top: 10px;
+			line-height: 30px;
+		}
+
+		.name-box {
+			padding-top: 30px;
+			line-height: 30px;
+		}
+
+		.city {
+			width: 30em;
+			padding-top: 10px;
+			line-height: 30px;
+		}
+
+		.city-box {
+			padding-top: 30px;
+			line-height: 30px;
+		}
+
+		.object {
+			width: 30em;
+			padding-top: 10px;
+			line-height: 30px;
+		}
+
+		.desirable-box {
+			padding-top: 30px;
+			line-height: 30px;
+		}
+
+		.generator {
+			top: 140px;
+		}
+
+		.generate {
+			margin: 30px;
+			width: 15em;
+			line-height: 45px;
+			top: 610px;
+			font-size: 2rem;
+		}
+		.add-file-box {
+			padding-top: 10px;
+		}
+
+		.add-file {
+			margin-top: 110px;
+		}
+
+		.add-file::before {
+			padding: 10px 20px;
+			font-size: 1.7rem;
+		}
+	}
+}
+
+@mixin min1200px {
+	@media (min-width: 1200px) {
+		.nav-mobile-logo-a {
+			top: 0.6em;
+			left: 1em;
+			font-size: 3rem;
+		}
+
+		.burger-btn {
+			top: 3.5em;
+			right: 3.5em;
+		}
+
+		.generator {
+			top: 140px;
+		}
+
+		.generate {
+			margin: 30px;
+			width: 15em;
+			line-height: 45px;
+			top: 610px;
+			font-size: 2rem;
+		}
+	}
+}

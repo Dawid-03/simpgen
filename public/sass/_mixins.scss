@@ -1,0 +1,242 @@
+@mixin burgerBtn {
+	position: absolute;
+	right: 0;
+	height: 3px;
+	content: '';
+	background-color: $white;
+	transition: width 0.4s;
+}
+
+@mixin navItemsAnimation {
+	@keyframes navItemsAnimation {
+		from {
+			transform: translateX(200%);
+		}
+
+		to {
+			transform: translateX(0);
+		}
+	}
+
+	.nav-items-animation {
+		animation: navItemsAnimation;
+	}
+}
+
+@mixin generatorIcon {
+	.fa-airbnb {
+		position: absolute;
+		font-size: 1.8rem;
+		margin-left: -22px;
+		top: 2px;
+	}
+}
+
+@mixin discordIcon {
+	.fa-discord {
+		position: absolute;
+		font-size: 1.5rem;
+		margin-left: -25px;
+		top: 3px;
+	}
+}
+
+@mixin donateIcon {
+	.fa-coins {
+		position: absolute;
+		font-size: 1.6rem;
+		margin-left: -25px;
+		top: 2px;
+	}
+}
+
+@mixin donateHand {
+	.fa-hand-holding-usd {
+		position: absolute;
+		font-size: 2rem;
+		margin-left: 7px;
+	}
+}
+
+@mixin heroImages($bgImg) {
+	background-image: linear-gradient(
+			90deg,
+			rgba(0, 41, 90, 0.85) 0%,
+			rgba(0, 41, 90, 0.85) 100%
+		),
+		url($bgImg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+@mixin min992px {
+	@media (min-width: 992px) {
+		.nav-mobile-logo-a,
+		.burger-btn {
+			display: none;
+		}
+
+		.header {
+			@include heroImages('../img/laptop-big.png');
+			width: 100%;
+			height: 950px;
+		}
+
+		.white-block {
+			height: 50px;
+			width: 45%;
+		}
+
+		.nav-mobile-logo-a {
+			top: 0.6em;
+			left: 1em;
+			font-size: 3rem;
+		}
+
+		.burger-btn {
+			top: 3.5em;
+			right: 3.5em;
+		}
+	}
+}
+
+@mixin max992px {
+	@media (max-width: 992px) {
+		.nav-pc {
+			display: none;
+		}
+	}
+}
+
+@mixin min768px {
+	@media (min-width: 768px) {
+		.header {
+			width: 100%;
+			height: 800px;
+
+			&__heading {
+				font-size: 4.5rem;
+				margin: 3em 0.7em 0.5em 0.7em;
+			}
+
+			&__text {
+				font-size: 2.8rem;
+			}
+
+			&__btn {
+				width: 350px;
+				line-height: 80px;
+				border-radius: 130px;
+				font-size: 2.5rem;
+				margin-top: 1em;
+				margin-bottom: 4em;
+			}
+		}
+
+		.white-block {
+			height: 50px;
+			width: 45%;
+		}
+
+		.nav-mobile-logo-a {
+			top: 0.6em;
+			left: 1em;
+			font-size: 3rem;
+		}
+
+		.burger-btn {
+			top: 3.5em;
+			right: 3.5em;
+		}
+
+		.nav {
+			&__item {
+				font-size: 3rem;
+			}
+		}
+
+		.card {
+			position: relative;
+			width: 100%;
+			height: 400px;
+			perspective: 800px;
+			margin-top: 7.5em;
+		}
+
+		.img {
+			width: 400px;
+			height: 600px;
+			border-radius: 50px;
+		}
+
+		.text {
+			height: 400px;
+			padding: 20px;
+			font-size: 2.8rem;
+			border-radius: 20px;
+		}
+
+		.fa-hand-holding-usd {
+			font-size: 3rem;
+			margin-left: 10px;
+		}
+
+		.card-button {
+			top: -90%;
+		}
+		.card__btn {
+			width: 250px;
+			line-height: 70px;
+			font-size: 3rem;
+			border-radius: 1250px;
+		}
+
+		.footer {
+			top: 300px;
+		}
+	}
+}
+
+@mixin min1200px {
+	@media (min-width: 1200px) {
+		.header {
+			width: 100%;
+			height: 850px;
+
+			&__heading {
+				font-size: 6.5rem;
+				margin: 3em 0.7em 0.5em 0.7em;
+			}
+
+			&__text {
+				font-size: 2.8rem;
+			}
+
+			&__btn {
+				width: 350px;
+				line-height: 80px;
+				border-radius: 130px;
+				font-size: 2.5rem;
+				margin-top: 1em;
+				margin-bottom: 7em;
+			}
+		}
+
+		.white-block {
+			height: 50px;
+			width: 45%;
+		}
+
+		.nav-mobile-logo-a {
+			top: 0.6em;
+			left: 1em;
+			font-size: 3rem;
+		}
+
+		.burger-btn {
+			top: 3.5em;
+			right: 3.5em;
+		}
+	}
+}

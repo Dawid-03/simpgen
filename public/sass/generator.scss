@@ -1,0 +1,387 @@
+@import './colors';
+@import './genmixins';
+@import './components';
+
+*,
+*::before,
+*::after {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Open Sans', sans-serif;
+	background-image: linear-gradient(
+			90deg,
+			rgba(0, 41, 90, 0.85) 0%,
+			rgba(0, 41, 90, 0.85) 100%
+		),
+		url(../img/laptop-big.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	font-size: 1.6rem;
+}
+
+// MOBILE NAVIGATION
+
+.burger-btn {
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	z-index: 1000;
+	cursor: pointer;
+	background: none;
+
+	&__focus {
+		outline: none;
+		border: none;
+		border-radius: 8px;
+	}
+
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		@include burgerBtn;
+	}
+
+	&__bars {
+		width: 100%;
+
+		&::after {
+			top: 13px;
+			width: 80%;
+		}
+
+		&::before {
+			top: 27px;
+			width: 60%;
+			transition-delay: 0.1s;
+		}
+	}
+}
+
+.nav-mobile-logo-a {
+	position: absolute;
+	padding: 20px;
+	color: $white;
+	top: 0.5em;
+	left: 0.5em;
+	font-weight: 700;
+	font-size: 2rem;
+	letter-spacing: 1px;
+	z-index: 10;
+	text-decoration: none;
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-image: $light-blue-gradient;
+	z-index: 300;
+	transform: translateX(0);
+	transition: transform 0.4s cubic-bezier(0.45, 0.05, 0.66, 1);
+
+	&--active {
+		transform: translateX(100%);
+	}
+
+	&__item {
+		display: block;
+		text-align: center;
+		padding: 1.3em;
+		text-decoration: none;
+		color: $white;
+		font-size: 2rem;
+		letter-spacing: 1px;
+	}
+}
+
+// PC NAVIGATION
+
+.nav-pc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	z-index: 1;
+	top: 1em;
+}
+
+.nav-pc-div {
+	position: absolute;
+	right: 10%;
+	// top: 20px;
+}
+
+.nav-pc-a {
+	display: inline-block;
+	padding: 0 40px 0 40px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	color: $white;
+	cursor: pointer;
+	text-decoration: none;
+	transform: scale(1);
+	transition: transform 0.4s;
+}
+
+.nav-pc-logo-a {
+	position: absolute;
+	left: 10%;
+	color: $white;
+	font-weight: 700;
+	font-size: 2rem;
+	letter-spacing: 1px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: transform 0.4s;
+}
+
+.nav-pc-a:hover {
+	transform: scale(1.2);
+}
+
+.nav-pc-logo-a:hover {
+	transform: scale(0.9);
+}
+
+// NAV-PC ICONS
+
+@include generatorIcon;
+@include discordIcon;
+@include donateIcon;
+@include donateHand;
+
+// FOOTER
+
+.footer {
+	position: absolute;
+	width: 100%;
+	line-height: 60px;
+	background-color: $dark-blue;
+	color: $white;
+	text-align: center;
+	top: 830px;
+}
+
+// GENERATOR INPUT
+
+input,
+label {
+	display: block;
+}
+
+.generator {
+	position: relative;
+	top: 90px;
+	margin-bottom: 50px;
+	color: $white;
+
+}
+
+.signature-box {
+	border-radius: 300px;
+	padding-top: 30px;
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+	transition: transform 0.5s;
+}
+
+.sign {
+	width: 20em;
+	border-radius: 300px;
+	padding-top: 10px;
+	line-height: 30px;
+	text-align: center;
+	background-color: $gray-white;
+}
+
+.signature-box:hover {
+	transform: translateY(-6px);
+}
+
+.bday {
+	width: 20em;
+	border-radius: 300px;
+	padding-top: 10px;
+	line-height: 30px;
+	text-align: center;
+	background-color: $gray-white;
+}
+
+.birth-box {
+	border-radius: 300px;
+	padding-top: 30px;
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+	transition: transform 0.5s;
+}
+
+.birth-box:hover {
+	transform: translateY(-6px);
+}
+
+.name {
+	width: 20em;
+	border-radius: 300px;
+	padding-top: 10px;
+	line-height: 30px;
+	text-align: center;
+	background-color: $gray-white;
+	transition: background-color 0.5s;
+}
+
+.name-box {
+	border-radius: 300px;
+	padding-top: 30px;
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+	transition: transform 0.5s;
+}
+
+.name-box:hover {
+	transform: translateY(-6px);
+}
+
+.city {
+	width: 20em;
+	border-radius: 300px;
+	padding-top: 10px;
+	line-height: 30px;
+	background-color: $gray-white;
+	text-align: center;
+	transition: background-color 0.5s;
+}
+
+.city-box {
+	border-radius: 300px;
+	padding-top: 30px;
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+	transition: transform 0.5s;
+}
+
+.city-box:hover {
+	transform: translateY(-6px);
+}
+
+.object {
+	width: 20em;
+	border-radius: 300px;
+	padding-top: 10px;
+	line-height: 30px;
+	background-color: $gray-white;
+	text-align: center;
+	transition: background-color 0.5s;
+}
+
+.desirable-box {
+	border-radius: 300px;
+	padding-top: 30px;
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+	transition: transform 0.5s;
+}
+
+.desirable-box:hover {
+	transform: translateY(-6px);
+}
+
+.generate {
+	text-align: center;
+	margin: 30px;
+	width: 12em;
+	line-height: 40px;
+	border-radius: 300px;
+	top: 580px;
+	font-size: 1.7rem;
+	background-color: $dark-blue;
+	color: $white;
+	position: absolute;
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+
+.submit-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.generate:hover {
+	transform: translateY(-6px);
+}
+
+.btn-label {
+	background-color: $dark-blue;
+	width: 20em;
+	border-radius: 300px;
+	padding-top: 10px;
+	margin-top: 30px;
+	height: 30px;
+	width: 100%;
+	color: $white;
+	text-align: center;
+	transition: transform 0.5s;
+	cursor: pointer;
+}
+
+.btn-label:hover {
+	transform: translateY(-6px);
+}
+
+#actual-btn {
+	display: none;
+}
+
+.file-not-add {
+	position: absolute;
+	margin: 10px 20px;
+	font-family: sans-serif;
+}
+
+// BREAKPOINTS
+
+@include min768px;
+@include min992px;
+@include max992px;
+@include min1200px;

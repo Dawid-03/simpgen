@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPCARD MENU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/53c611a6af.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+
+    <button class="burger-btn">
+        <div class="burger-btn__box">
+            <div class="burger-btn__bars"></div>
+        </div>
+    </button>
+
+    <section class="nav nav--active">
+        <div class="nav__items">
+            <a href="./generator" class="nav__item">Generator</a>
+            <a href="#" class="nav__item">Discord</a>
+            <a href="https://tipply.pl/u/simpcard" target="_blank" class="nav__item">Donate</a>
+        </div>
+    </section>
+
+    <section>
+        <a href="./index.html" class="nav-mobile-logo-a">SIMPCARD.PL</a>
+    </section>
+
+    <section class="nav-pc">
+        <div class="nav-pc-div">
+            <a href="./generator" class="nav-pc-a"><i class="fab fa-airbnb"></i>Generator</a>
+            <a href="#" class="nav-pc-a"><i class="fab fa-discord"></i>Discord</a>
+            <a href="https://tipply.pl/u/simpcard" target="_blank" class="nav-pc-a"><i
+                    class="fas fa-coins"></i>Donate</a>
+        </div>
+        <a href="#" class="nav-pc-logo-a">SIMPCARD.PL</a>
+    </section>
+
+    <section class="header section">
+        <h1 class="header__heading">Stwórz swój własny SIMP CARD</h1>
+        <p class="header__text">Kliknij poniższy przycisk, wpisz potrzebne dane i dodaj zdjęcie.</p>
+        <a href="./generator" class="header__btn btn-special-animation">Stwórz SIMP CARD</a>
+        <div class="white-block white-block-left"></div>
+    </section>
+
+    <section class="cards-section">
+        <div class="card">
+            <div class="img one"></div>
+            <div class="text text-one">
+                <h3>Donate<i class="fas fa-hand-holding-usd"></i></h3>
+                <p>Sypnij groszem, dzieki temu rozwiniemy stronę!</p>
+            </div>
+            <div class="card-button">
+                <a href="https://tipply.pl/u/simpcard" target="_blank"
+                    class="card__btn btn-special-animation">DONATE</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <span>&copy; 2021 | SIMPCARD.PL</span>
+    </section>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        const navBtn = document.querySelector('.burger-btn');
+
+        const handleNav = () => {
+            nav.classList.toggle('nav--active');
+
+            allNavItems.forEach((item) => {
+                item.addEventListener('click', () => {
+                    nav.classList.remove('nav--active');
+                });
+            });
+        };
+
+        navBtn.addEventListener('click', handleNav);
+
+        // add file -----------------------------------------
+
+        const actualBtn = document.getElementsById('actual-btn');
+
+        const fileChosen = document.getElementsByClassName('.file-not-add');
+
+        actualBtn.addEventListener('change', function () {
+            fileChosen.textContent = this.files[0].name;
+        });
+
+    </script>
+</body>
+
+</html>
